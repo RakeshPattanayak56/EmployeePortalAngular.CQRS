@@ -10,8 +10,6 @@ export class AddEmployee {
     postalCode:number;
     phoneNo:number;
     emailAddress:string;
-    name:string;
-    price:string;
     visible: boolean;
   userName: any;
 }

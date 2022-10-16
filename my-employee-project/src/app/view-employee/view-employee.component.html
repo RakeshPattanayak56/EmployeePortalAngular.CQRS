@@ -13,19 +13,12 @@
   </tr>
 </div> -->
 <br>
-<label >Search:</label>
-<input type="text" [(ngModel)]="userName" (input)="Search()">
-{{userName}}
-<br>
 <br>
 <table class="table table-hover">
     <thead>
       <th>Id</th>
-      <th>Product name</th>
-      <th>Price</th>
       <th>First Name</th>
       <th>Last Name</th>
-      <th>Full Name</th>
       <th>City</th>
       <th>State</th>
       <th>Postal Code</th>
@@ -38,11 +31,8 @@
     <tbody>
       <tr *ngFor="let item of data ">
         <td *ngIf="!item.visible">{{item.id}}</td>
-        <td *ngIf="!item.visible">{{item.name}}</td>
-        <td *ngIf="!item.visible">{{item.price}}</td>
         <td *ngIf="!item.visible">{{item.firstName}}</td>
         <td *ngIf="!item.visible">{{item.lastName}}</td>
-        <td *ngIf="!item.visible">{{item.fullName}}</td>
         <td *ngIf="!item.visible">{{item.city}}</td>
         <td *ngIf="!item.visible">{{item.state}}</td>
         <td *ngIf="!item.visible">{{item.postalCode}}</td>
@@ -56,12 +46,9 @@
       <td *ngIf="!item.visible" style="cursor: pointer;">
         <button type="button" class="rowbutton" (click)="delete(item.id)">Delete</button>   
     </td>
-      <td *ngIf="item.visible"><input [(ngModel)]="item.id" id="field"></td>
-      <td *ngIf="item.visible"><input [(ngModel)]="item.name" id="field"></td>
-      <td *ngIf="item.visible"><input [(ngModel)]="item.price" id="field"></td>
+      <td *ngIf="item.visible">{{item.id}}</td>
       <td *ngIf="item.visible"><input [(ngModel)]="item.firstName " id="field"></td>
       <td *ngIf="item.visible"><input [(ngModel)]="item.lastName" id="field"></td>
-      <td *ngIf="item.visible"><input [(ngModel)]="item.fullName" id="field"></td>
       <td *ngIf="item.visible"><input [(ngModel)]="item.city " id="field"></td>
       <td *ngIf="item.visible"><input [(ngModel)]="item.state" id="field"></td>
       <td *ngIf="item.visible"><input [(ngModel)]="item.postalCode" id="field"></td>

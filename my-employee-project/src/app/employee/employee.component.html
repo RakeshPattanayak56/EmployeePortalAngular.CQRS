@@ -8,10 +8,6 @@
       <mat-label>Last Name</mat-label>
       <input matInput [(ngModel)]="lastName" name="last">
     </mat-form-field></td>
-    <td><mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Full Name</mat-label>
-      <input matInput [(ngModel)]="fullName"   name="full" >
-    </mat-form-field></td>
   </tr></table>
 
   <p>
@@ -42,20 +38,12 @@
   </tr></table>
   <td><mat-form-field class="example-full-width" appearance="fill" >
     <mat-label>Phone No</mat-label>
-    <input matInput [(ngModel)]="phoneNo" #postalCode maxlength="12" name="phone">
+    <input matInput [(ngModel)]="phoneNo" #postalCode minlength="10" maxlength="12" name="phone">
     <mat-hint align="end">{{postalCode.value.length}} / 12</mat-hint>
   </mat-form-field></td>
   <td><mat-form-field class="example-full-width" appearance="fill" >
     <mat-label>Email Address</mat-label>
     <input matInput [(ngModel)]="emailAddress" placeholder="Ex. San Francisco" name="email">
-  </mat-form-field></td>
-  <td><mat-form-field class="example-full-width" appearance="fill" >
-    <mat-label>Product Name</mat-label>
-    <input matInput [(ngModel)]="name" placeholder="Ex. Chair" name="productname">
-  </mat-form-field></td>
-  <td><mat-form-field class="example-full-width" appearance="fill" >
-    <mat-label>Poduct Price</mat-label>
-    <input matInput [(ngModel)]="price" placeholder="Ex. $100" name="productprice">
   </mat-form-field></td>
   <button mat-raised-button color="primary" (click)="AddNewEmployeeData()">Save</button>
 </form>

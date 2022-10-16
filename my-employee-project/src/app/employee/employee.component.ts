@@ -22,39 +22,31 @@ export class EmployeeComponent implements OnInit {
   public postalCode='';
   public phoneNo='';
   public emailAddress='';
-  public name='';
-  public price='';
 
   public NewEmployeeData={
     id:0,
     firstName:'',
     lastName:'',
-    fullName:'',
     presentAddress:'',
     permanentAddress:'',
     city:'',
     state:'',
     postalCode:'',
     phoneNo:'',
-    emailAddress:'',
-    name:'',
-    price:''
+    emailAddress:''
   };
   public AddNewEmployeeData(){
     this.NewEmployeeData={
       id:0,
       firstName:this.firstName,
       lastName:this.lastName,
-      fullName:this.fullName,
       presentAddress:this.presentAddress,
       permanentAddress:this.permanentAddress,
       city:this.city,
       state:this.state,
       postalCode:this.postalCode,
       phoneNo:this.phoneNo,
-      emailAddress:this.emailAddress,
-      name:this.name,
-      price:this.price
+      emailAddress:this.emailAddress
     };
     this.updateEmployeedetails(this.NewEmployeeData);
   }
@@ -64,7 +56,6 @@ export class EmployeeComponent implements OnInit {
       () => {              
         this.firstName=''
         this.lastName='';
-        this.fullName='';
         this.presentAddress='';
         this.permanentAddress=''
         this.city='';
@@ -72,9 +63,7 @@ export class EmployeeComponent implements OnInit {
         this.postalCode='';
         this.phoneNo=''
         this.emailAddress='';
-        this.name='';
-        this.price='';
-        alert("update Succefully");  
+        alert("updated Succefully");  
       }
     );
   }
