@@ -13,4 +13,5 @@ export class AddEmployee {
     name:string;
     price:string;
     visible: boolean;
+  userName: any;
 }

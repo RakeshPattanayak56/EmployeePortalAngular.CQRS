@@ -10,11 +10,9 @@ export class AddEmployeeService {
   url = 'https://localhost:44378/api';
   constructor(private http: HttpClient) { }
   getAllEmployeedetails(): Observable<AddEmployee[]> {
-    debugger
-    return this.http.get<AddEmployee[]>(this.url + '/AddEmployee/getallemployeedetail');
+    return this.http.get<AddEmployee[]>(this.url + '/AddEmployee');
   }
   updateEmployeedetails(employeedetails: AddEmployee): Observable<AddEmployee> {
-    debugger
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
     return this.http.post<AddEmployee>(this.url + '/AddEmployee',employeedetails, httpOptions);
   }

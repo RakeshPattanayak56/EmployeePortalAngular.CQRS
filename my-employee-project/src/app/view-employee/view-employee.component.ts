@@ -11,6 +11,8 @@ export class ViewEmployeeComponent implements OnInit {
   dataitem: string;
   filterValue:string;
   userName:string;
+  dataSaved: boolean;
+  message:string;
 
   constructor(private employeeService: EmployeeService ){
   }
@@ -26,8 +28,17 @@ export class ViewEmployeeComponent implements OnInit {
   onEdit(data: { visible: boolean; }) {
     data.visible = true;
   }
-  onRowSubmit(dataitem: any) {
-     this.updateEmployeedetails(dataitem);
+  onRowSubmit(Id: any,employeedetails:any) {
+     this.putEmployeedetails(Id,employeedetails);
+  }
+  putEmployeedetails(Id: any,employeedetails:any) {
+    this.employeeService.putEmployeedetails(Id,employeedetails).subscribe(
+      () => {
+        this.dataitem='';
+        this.getAllEmployeedetails();
+        alert("update Succefully");  
+      }
+    );
   }
   updateEmployeedetails(dataitem: Employee){
     this.employeeService.updateEmployeedetails(dataitem).subscribe(
@@ -37,6 +48,15 @@ export class ViewEmployeeComponent implements OnInit {
         alert("update Succefully");  
       }
     );
+  }
+  delete(id:number){
+    if (confirm("Are you sure you want to delete this ?")) {  
+      this.employeeService.deleteEmployee(id).subscribe(() => {
+        this.dataSaved = true;
+        this.message = 'Record Deleted Succefully';
+        this.getAllEmployeedetails();
+      });
+    }
   }
   Search(){
     if(this.userName!=""){

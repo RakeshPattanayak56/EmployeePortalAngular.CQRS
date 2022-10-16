@@ -1,6 +1,6 @@
 import { Time } from "@angular/common";
 
-export class Employee {
+export class Employees {
     id:number;
     name:string;
     price:string;
@@ -23,6 +23,5 @@ export class Employee {
     lastUpdateTime:string;
     lastUpdatedBy:string;
     isActive:string;
-  visible: boolean;
   Login: unknown;
 }
