@@ -1,0 +1,19 @@
+table, th, td {
+    border: 2px solid rgb(204, 65, 162);
+    border-collapse: collapse;
+    padding: 15px;
+    background-color: rgb(235, 237, 243);
+    text-align: center;
+  }
+  .filter{
+    width: 80px;
+    height: 33px;
+    background-color: #26a69a;
+    color: white;
+  }
+  input[type=date] {
+    border: 1px solid  black;
+    border-radius: 2px;
+    width: 200px;
+    height: 30px;
+}

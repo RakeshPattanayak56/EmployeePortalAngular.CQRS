@@ -1,0 +1,64 @@
+<!-- <div class="search">
+  <tr>
+    <td style="border: none;">
+      <div class="searchbox">
+        <input type="text" name="filter" (keyup)="applyFilter($event)"   id="search" placeholder="Filter">
+      </div>
+    </td>
+    <td style="border: none;">
+      <div>
+        <button class="btn btn-primary" name="loaded" >Loaded</button>
+      </div>
+    </td>
+  </tr>
+</div> -->
+<br>
+<label >Search:</label>
+<input type="text" [(ngModel)]="userName" (input)="Search()">
+{{userName}}
+<br>
+<br>
+<table class="table table-hover">
+    <thead>
+      <th>Id</th>
+      <th>User Id</th>
+      <th>User Name</th>
+      <th>Login</th>
+      <th>Logout</th>
+      <!-- <th>InDeskTimeIn</th>
+      <th>InDeskTimeOut</th> -->
+      <th>LastUpdateTime</th>
+      <th>LastUpdatedBy</th>
+      <th>Edit</th>
+      
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data ">
+        <td *ngIf="!item.visible">{{item.id}}</td>
+        <td *ngIf="!item.visible">{{item.userId}}</td>
+        <td *ngIf="!item.visible">{{item.userName}}</td>
+        <td *ngIf="!item.visible">{{item.login | date:'yyyy-MM-dd'}}</td>
+        <td *ngIf="!item.visible">{{item.logout | date:'yyyy-MM-dd'}}</td>
+        <!-- <td *ngIf="!item.visible">{{item.inDeskTimeIn}}</td>
+        <td *ngIf="!item.visible">{{item.inDeskTimeOut}}</td> -->
+        <td *ngIf="!item.visible">{{item.lastUpdateTime | date:'yyyy-MM-dd'}}</td>
+        <td *ngIf="!item.visible">{{item.lastUpdatedBy}}</td>
+        <td *ngIf="!item.visible" style="cursor: pointer;">
+          <button type="button" class="rowbutton" (click)="onEdit(item)">Edit</button>   
+      </td>
+      <td *ngIf="item.visible"><input [(ngModel)]="item.id" id="field"></td>
+      <td *ngIf="item.visible"><input [(ngModel)]="item.userId" id="field"></td>
+      <td *ngIf="item.visible"><input [(ngModel)]="item.userName" id="field"></td>
+      <td *ngIf="item.visible"><input [(ngModel)]="item.login " id="field"></td>
+      <td *ngIf="item.visible"><input [(ngModel)]="item.logout" id="field"></td>
+      <!-- <td *ngIf="item.visible"><input [(ngModel)]="item.inDeskTimeIn" id="field"></td>
+      <td *ngIf="item.visible"><input [(ngModel)]="item.inDeskTimeOut" id="field"></td> -->
+      <td *ngIf="item.visible"><input [(ngModel)]="item.lastUpdateTime" id="field"></td>
+      <td *ngIf="item.visible"><input [(ngModel)]="item.lastUpdatedBy" id="field"></td>
+      <td *ngIf="item.visible">
+        <button type="button" class="rowbutton" (click)="onRowSubmit(item)">submit</button>
+      </td>
+      </tr>
+    </tbody>
+</table>
+

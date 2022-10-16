@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+    <span><mat-icon>eco</mat-icon><b routerLink="/welcome">E-Attendance Portal</b></span>
+    <span class="example-spacer"></span>
+    <span>
+      <button mat-button (click)="opened=!opened">Add User</button>
+      <button mat-flat-button color="accent" (click)="openDialog()" >Send Email</button>
+    </span>
+  </mat-toolbar>
+ <mat-sidenav-container>
+   <mat-sidenav [(opened)]="opened" mode="side">
+     <button mat-list-item>
+      <a routerLink="/employee">Add User Details</a>
+     </button >
+     <button mat-list-item>
+      <a routerLink="/view-employee">View User Details</a>
+     </button>
+   </mat-sidenav>
+   <mat-sidenav-content>
+     <router-outlet></router-outlet>
+   </mat-sidenav-content>
+ </mat-sidenav-container>
+ 

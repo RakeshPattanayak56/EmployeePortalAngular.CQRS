@@ -1,0 +1,11 @@
+<h2>Add Email</h2>
+<label >Email</label>
+<br>
+<input  formControlName="email"  required  type="text" class="form-control" emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  name="email">
+<br>
+<br>
+<div>
+    <button value="save" 
+    [style.color]="'black'">Save</button>&nbsp;
+    <button value="cancel">Cancel</button>
+</div>
